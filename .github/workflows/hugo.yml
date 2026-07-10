@@ -1,8 +1,8 @@
-name: Deploy Hugo site to GitHub Pages
+name: Deploy preview to GitHub Pages
 
 on:
   push:
-    branches: ["main", "redesign"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -44,7 +44,8 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "${{ steps.pages.outputs.base_url }}/v2-july-2026/" \
+            --destination public/v2-july-2026
 
       - name: Upload artifact
         # Only upload (and deploy) from main
