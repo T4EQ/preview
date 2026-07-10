@@ -3,7 +3,7 @@
    Canvas reference: 1480px wide frames
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Inter:wght@200;300;400;500;600&display=swap');
 
 /* ── Design tokens ── */
 :root {
@@ -20,12 +20,21 @@
   --font-sans: 'Inter', system-ui, sans-serif;
 
   /* Type scale — Roboto Mono 500 (headings) · Inter 400 (text) */
-  --fs-h1:    6rem;    /* 96px · hero display  · lh 1.0 · ls -2% */
+  --fs-h1:    5rem;    /* 80px · hero display  · lh 1.0 · ls -2% */
   --fs-h2:    3rem;    /* 48px · section title · lh 1.0 · ls -2% */
   --fs-h3:    2.5rem;  /* 40px · sub-heading   · lh 1.1 · ls -2% */
   --fs-h4:    1.75rem; /* 28px · card / label  · lh 1.2 · ls -1% */
-  --fs-lead:  1.75rem; /* 28px · lead / t1 · lh 1.2 (Inter) */
+  --fs-lead:  1.5rem;  /* 24px · lead / t1 · lh 1.2 (Inter) */
   --fs-body:  1.25rem; /* 20px · body / t2 · lh 1.2 (Inter) */
+
+  /* Font weights — scale + semantic aliases */
+  --fw-extralight: 200;
+  --fw-light:      300;
+  --fw-regular:    400;
+  --fw-medium:     500;
+  --fw-lead: var(--fw-extralight); /* t1 weight (Inter) */
+  --fw-body: var(--fw-extralight);    /* t2 weight (Inter) */
+
   --ls-tight: -0.02em; /* h1–h3 */
   --ls-snug:  -0.01em; /* h4 */
 
@@ -237,6 +246,22 @@ body {
     --fs-body: 1rem;   /* 16px */
     --space-xl: 3.5rem;
   }
+  .site-footer .container {
+    gap: var(--space-sm);
+  }
+  .footer-links a {
+    font-size: 0.8125rem; /* 13px */
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 430px) {
+  .site-footer .container {
+    gap: var(--space-xs);
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+  .footer-links a { font-size: 0.75rem; } /* 12px */
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -323,7 +348,7 @@ body {
 .c-band__title {
   font-family: var(--font-mono);
   font-size: var(--fs-h2);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1;
   letter-spacing: var(--ls-tight);
   color: inherit;
@@ -331,7 +356,7 @@ body {
 .c-band__intro {
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  font-weight: 300;
+  font-weight: var(--fw-lead);
   line-height: 1.2;
   max-width: 640px;
   margin-bottom: var(--space-md);
@@ -344,7 +369,7 @@ body {
 .c-prose {
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  font-weight: 400;
+  font-weight: var(--fw-body);
   line-height: 1.2;
   max-width: 640px;
 }
@@ -388,7 +413,7 @@ body {
 .c-hero__title {
   font-family: var(--font-mono);
   font-size: clamp(2.5rem, 5.5vw, 5rem);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   color: var(--offwhite);
   line-height: 1;
   letter-spacing: var(--ls-tight);
@@ -396,7 +421,7 @@ body {
 .c-hero__sub {
   font-family: var(--font-sans);
   font-size: var(--fs-lead);
-  font-weight: 400;
+  font-weight: var(--fw-light);
   color: rgba(245,245,244,1);
   line-height: 1.2;
 }
@@ -406,7 +431,7 @@ body {
 .c-pageheader__title {
   font-family: var(--font-mono);
   font-size: var(--fs-h2);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1;
   letter-spacing: var(--ls-tight);
   padding: var(--space-md) 0;
@@ -442,7 +467,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-card__title {
   font-family: var(--font-mono);
   font-size: var(--fs-h4);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.2;
   letter-spacing: var(--ls-snug);
   color: inherit;
@@ -450,7 +475,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-card__text {
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  font-weight: 400;
+  font-weight: var(--fw-light);
   line-height: 1.5;
   opacity: 1;
   flex: 1;
@@ -471,7 +496,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-people-group__label {
   font-family: var(--font-mono);
   font-size: var(--fs-h3);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.1;
   letter-spacing: var(--ls-tight);
   text-align: center;
@@ -491,7 +516,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-person__name {
   font-family: var(--font-mono);
   font-size: var(--fs-h4);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.2;
   letter-spacing: var(--ls-snug);
   color: inherit;
@@ -500,7 +525,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-person__text {
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  font-weight: 400;
+  font-weight: var(--fw-light);
   line-height: 1.5;
   opacity: 1;
 }
@@ -530,7 +555,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-project__name {
   font-family: var(--font-mono);
   font-size: var(--fs-h2);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.1;
   letter-spacing: var(--ls-tight);
   color: var(--offwhite);
@@ -540,7 +565,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
   display: block;
   font-family: var(--font-mono);
   font-size: var(--fs-h4);
-  font-weight: 400;
+  font-weight: var(--fw-light);
   line-height: 1.2;
   letter-spacing: var(--ls-snug);
   color: var(--offwhite);
@@ -556,7 +581,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-project__meta dt {
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  font-weight: 400;
+  font-weight: var(--fw-light);
   line-height: 1.4;
   opacity: 0.7;
 }
@@ -564,7 +589,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  font-weight: 400;
+  font-weight: var(--fw-light);
   line-height: 1.4;
 }
 .c-project__media {
@@ -581,14 +606,14 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
   gap: var(--space-md);
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  font-weight: 400;
+  font-weight: var(--fw-light);
   line-height: 1.5;
   opacity: 1;
 }
 .c-project__block-title {
   font-family: var(--font-mono);
   font-size: var(--fs-h4);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.2;
   letter-spacing: var(--ls-snug);
   margin-bottom: var(--space-sm);
@@ -601,7 +626,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-process__phase {
   font-family: var(--font-mono);
   font-size: var(--fs-h4);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.2;
   letter-spacing: var(--ls-snug);
   margin: var(--space-md) 0 var(--space-sm);
@@ -623,7 +648,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
   justify-content: flex-start;
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  font-weight: 400;
+  font-weight: var(--fw-light);
   line-height: 1.5;
 }
 .c-process__arrow {
@@ -649,7 +674,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-mv__card-title {
   font-family: var(--font-mono);
   font-size: var(--fs-h4);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.2;
   letter-spacing: var(--ls-snug);
   margin-bottom: var(--space-sm);
@@ -657,7 +682,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-mv__card-text {
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  font-weight: 400;
+  font-weight: var(--fw-light);
   line-height: 1.5;
   opacity: 1;
 }
@@ -676,7 +701,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-highlight__name {
   font-family: var(--font-mono);
   font-size: var(--fs-h4);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.1;
   letter-spacing: var(--ls-tight);
   margin-bottom: var(--space-sm);
@@ -684,7 +709,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-highlight__meta {
   font-family: var(--font-mono);
   font-size: var(--fs-h4);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.2;
   letter-spacing: var(--ls-snug);
   margin-bottom: var(--space-sm);
@@ -692,7 +717,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-highlight__text {
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  font-weight: 400;
+  font-weight: var(--fw-light);
   line-height: 1.5;
   margin-bottom: var(--space-md);
 }
@@ -736,7 +761,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-cta__title {
   font-family: var(--font-mono);
   font-size: var(--fs-h2);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1;
   letter-spacing: var(--ls-tight);
   color: var(--offwhite);
@@ -753,14 +778,14 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-cta__meta {
   font-family: var(--font-mono);
   font-size: var(--fs-body);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.6;
   margin-bottom: var(--space-sm);
 }
 .c-cta__text {
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  font-weight: 400;
+  font-weight: var(--fw-light);
   line-height: 1.5;
   margin-bottom: var(--space-md);
 }

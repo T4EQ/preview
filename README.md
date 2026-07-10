@@ -85,23 +85,38 @@ can be reviewed before going live:
 
 ### How the branches and remotes fit together
 
-You work in a single local clone with two remotes:
+You work in a single local clone with two remotes and two branches:
 
 | Remote    | Repository              | Purpose                                    |
 | --------- | ----------------------- | ------------------------------------------ |
 | `origin`  | `T4EQ/T4EQ.github.io`   | The main site (production, t4eq.org).      |
 | `preview` | `T4EQ/preview`          | The staging site (`/preview/v2-july-2026/`). |
 
-The v2 redesign lives on the **`deploy/preview`** branch. Pushing that branch to
-the **`preview`** remote's `main` triggers a GitHub Action that builds and
-publishes the staging site.
+- **`redesign`** is the source of truth for the v2 site. **All real edits**
+  (content, data, styles, templates) happen here.
+- **`deploy/preview`** is `redesign` plus a few preview-only CI commits (build
+  into a subfolder, set the subpath baseURL, enable `canonifyURLs`). Its only
+  job is to publish the staging site — you don't edit code directly on it.
+
+```
+redesign  ──►  real code, source of truth  (push to origin)
+   │  merge into
+   ▼
+deploy/preview  ──►  redesign + CI tweaks  (push to preview → t4eq.org/preview/)
+```
 
 ### Updating the preview after you make changes
 
-Do all of this from the repo root, on the `deploy/preview` branch
-(`git switch deploy/preview` if you're not already there):
+All real editing happens on **`redesign`**; `deploy/preview` is only used to
+publish. From the repo root:
 
-1. **Make your edits** (content in `content/`, data in `data/`, styles in
+1. **Edit on `redesign`:**
+
+   ```sh
+   git switch redesign
+   ```
+
+   Make your changes (content in `content/`, data in `data/`, styles in
    `static/css/main.css`, templates in `layouts/`).
 
 2. **Check them locally first** — the local server rebuilds automatically:
@@ -112,16 +127,20 @@ Do all of this from the repo root, on the `deploy/preview` branch
 
    Open <http://localhost:1313> and confirm the change looks right.
 
-3. **Commit your changes:**
+3. **Commit and back up `redesign`:**
 
    ```sh
    git add -A
    git commit -m "Describe what you changed"
+   git push origin redesign
    ```
 
-4. **Publish to the preview site** by pushing to the preview repo's `main`:
+4. **Fold the changes into `deploy/preview` and publish** — merging keeps the
+   push to the preview remote a simple fast-forward (no force-push needed):
 
    ```sh
+   git switch deploy/preview
+   git merge redesign
    git push preview deploy/preview:main
    ```
 
@@ -131,6 +150,12 @@ Do all of this from the repo root, on the `deploy/preview` branch
 
    ```sh
    gh run watch --repo T4EQ/preview --exit-status
+   ```
+
+6. **Switch back to `redesign`** for your next round of edits:
+
+   ```sh
+   git switch redesign
    ```
 
 > **Tip:** if the page looks stale, it's usually browser/CDN caching — do a

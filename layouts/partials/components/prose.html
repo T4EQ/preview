@@ -7,7 +7,7 @@
   </div></div>
   {{ end }}
   <div class="container">
-    {{ with .intro }}<p class="c-band__intro">{{ . }}</p>{{ end }}
+    {{ with .intro }}<p class="c-band__intro c-band__intro--wide c-band__intro--lead">{{ . }}</p>{{ end }}
     {{ if .bodyIsHtml }}
     <div class="c-prose">{{ .body }}</div>
     {{ else }}
