@@ -41,6 +41,7 @@ jobs:
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
+          HUGO_CANONIFYURLS: true
         run: |
           hugo \
             --minify \
