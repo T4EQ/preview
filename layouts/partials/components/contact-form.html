@@ -6,7 +6,7 @@
   </div></div>
   {{ end }}
   <div class="container">
-    {{ with .intro }}<p class="c-band__intro">{{ . }}</p>{{ end }}
+    {{ with .intro }}<p class="c-band__intro c-band__intro--form c-band__intro--lead">{{ . }}</p>{{ end }}
     <form class="c-form" action="{{ .action | default "#" }}" method="POST"{{ with .email }} data-email="{{ . }}"{{ end }}>
       <div class="c-form__field">
         <label class="c-form__label" for="name">Your Name</label>

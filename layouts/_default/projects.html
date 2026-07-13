@@ -14,12 +14,13 @@
   "intro" .Params.services_intro
   "columns" 3
   "icons" true
+  "reserveTitles" true
   "cards" hugo.Data.services
 ) }}
 
 {{ partial "components/cta.html" (dict
-  "title" "Share your challenge"
-  "ariaLabel" "Share your challenge"
+  "title" "Share Your Challenge"
+  "ariaLabel" "Share Your Challenge"
   "image" .Params.cta_image
   "cardColor" "purple"
   "text" (.Params.cta_text | default "Have a challenge technology could help solve? Tell us about it.")

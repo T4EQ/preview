@@ -1,7 +1,7 @@
 ---
 title: "Contact"
 layout: "contact"
-intro: "Have a question, a project idea, or a challenge technology could help solve? Drop us a message — we'd love to hear from you."
+intro: "Have a question, a tech challenge to solve, or a partnership idea? Drop us a message with how you’d like to get involved. We’d love to hear from you."
 
 connect_text: "Follow our work and join the conversation on social media."
 
@@ -10,6 +10,6 @@ connect_text: "Follow our work and join the conversation on social media."
 # endpoint at https://formspree.io (or https://web3forms.com) and paste it below,
 # e.g. https://formspree.io/f/abcdwxyz
 # Until an endpoint is set, the form opens the visitor's email app addressed to contact_email.
-form_action: "#"
-contact_email: "info@t4eq.com"
+form_action: "https://formspree.io/f/xdkdogke"
+contact_email: "info@t4eq.org"
 ---

@@ -5,7 +5,6 @@
   --green: #679869;
   --offwhite: #F5F5F4;
   --white: #ffffff;
-  --text-dark: #1a1a1a;
   --text-mid: #444;
   --font-mono: 'Roboto Mono', monospace;
   --font-body: 'Inter', sans-serif;
@@ -18,7 +17,7 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
-  color: var(--text-dark);
+  color: var(--purple);
   background: var(--offwhite);
 }
 
@@ -142,7 +141,7 @@ img { display: block; max-width: 100%; }
   background: var(--purple);
   color: var(--white);
 }
-.section--purple .section-title { color: var(--white); }
+.section--purple .section-title { color: var(--offwhite); }
 .section--purple .section-intro { color: rgba(255,255,255,0.8); }
 
 .section-title {

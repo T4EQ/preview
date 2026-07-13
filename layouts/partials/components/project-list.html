@@ -4,7 +4,7 @@
   {{ partial "components/_band-header.html" (dict "title" .title "level" .level) }}
   <div class="container">
     {{ with .intro }}<p class="c-band__intro c-band__intro--wide c-band__intro--lead">{{ . }}</p>{{ end }}
-    {{ range .projects }}
+    {{ range $p := .projects }}
     <article class="c-project">
       <div class="c-project__head{{ if not .image }} c-project__head--full{{ end }}">
         <div>
@@ -23,12 +23,6 @@
             </div>
             {{ end }}
           </dl>
-          {{ if or .link .article }}
-          <div class="c-highlight__actions c-project__actions">
-            {{ with .link }}<a class="c-highlight__link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} <span class="c-arrow" aria-hidden="true">→</span></a>{{ end }}
-            {{ with .article }}<a class="c-highlight__link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label | default "Read the article" }} <span class="c-arrow" aria-hidden="true">→</span></a>{{ end }}
-          </div>
-          {{ end }}
         </div>
         {{ if .image }}
         <div class="c-project__media">
@@ -48,6 +42,12 @@
         <div class="c-project__block">
           <h3 class="c-project__block-title">Our solution</h3>
           {{ . | markdownify }}
+          {{ if or $p.link $p.article }}
+          <div class="c-highlight__actions c-project__actions">
+            {{ with $p.link }}<a class="c-highlight__link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} <span class="c-arrow" aria-hidden="true">→</span></a>{{ end }}
+            {{ with $p.article }}<a class="c-highlight__link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label | default "Read the article" }} <span class="c-arrow" aria-hidden="true">→</span></a>{{ end }}
+          </div>
+          {{ end }}
         </div>
         {{ end }}
       </div>

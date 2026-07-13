@@ -9,7 +9,7 @@
 
 {{ partial "components/prose.html" (dict
   "background" "c-band--purple"
-  "title" "Support us"
+  "title" "Support Us"
   "intro" .Params.support_text
 ) }}
 
@@ -23,6 +23,7 @@
   "background" "c-band--green"
   "title" (.Params.partners_title | default "Our Partners")
   "intro" .Params.partners_intro
+  "outro" .Params.partners_outro
   "people" .Params.partners
 ) }}
 
