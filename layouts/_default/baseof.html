@@ -13,10 +13,10 @@
   {{ with .Site.Params.ogImage }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
 
   {{/* Favicon */}}
-  <link rel="icon" type="image/svg+xml" href="/images/logos/logo-short-positive.svg">
+  <link rel="icon" type="image/svg+xml" href="/images/logos/favicon-cropped.svg">
 
   {{/* Styles */}}
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/main.css?v={{ (readFile "static/css/main.css") | hash.FNV32a }}">
 
   {{/* Preconnect to Google Fonts (loaded in CSS) */}}
   <link rel="preconnect" href="https://fonts.googleapis.com">

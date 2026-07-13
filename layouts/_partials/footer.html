@@ -5,7 +5,8 @@
       <li>
         {{ if eq .URL "/" }}
         <a href="{{ .URL }}" class="footer-logo" aria-label="{{ .Name }}">
-          <img src="/images/logos/logo-offwhite.svg" alt="{{ .Name }}" class="footer-logo-img">
+          <img src="/images/logos/logo-offwhite.svg" alt="{{ .Name }}" class="footer-logo-img footer-logo-img--full">
+          <img src="/images/logos/logo-short.svg" alt="{{ .Name }}" class="footer-logo-img footer-logo-img--short">
         </a>
         {{ else if eq .Name "Social Media" }}
         <span class="footer-social">

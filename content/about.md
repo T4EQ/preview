@@ -30,7 +30,7 @@ mission_vision:
     text: "In the long term, we aim to create an open and structured platform that connects stakeholders with different objectives around a common social impact initiative."
 
 process_title: "How Do We Work?"
-process_intro: "Our structured, three-phase process outlines how we collaborate with partner NGOs from initial project discovery through to technical execution and long-term scaling. Every phase is driven by a continuous feedback loop with our partner NGOs.
+process_intro: "Our structured, three-phase process outlines how we collaborate with partner NGOs from initial project discovery to technical execution and long-term scaling. Every phase is driven by a continuous feedback loop with our partners.
 "
 process:
   - title: "Phase 1: Discover and Define"

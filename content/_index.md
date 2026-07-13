@@ -1,6 +1,6 @@
 ---
 title: "T4EQ — Tech for Equality"
-hero_image: "/images/backgrounds/home_hero.jpg"
+hero_image: "/images/backgrounds/home_hero_v2.jpg"
 tagline: "We envision a world where technology bridges inequality and gives every individual the tools to live with dignity and opportunity."
 
 mission_vision_title: "Our Mission and Vision"
