@@ -12,7 +12,7 @@
       {{ with .meta }}
       <div class="c-cta__meta">{{ range . }}{{ . }}<br>{{ end }}</div>
       {{ end }}
-      {{ with .text }}<p class="c-cta__text">{{ . }}</p>{{ end }}
+      {{ with .text }}{{ range (split . "\n") }}{{ with (trim . " ") }}<p class="c-cta__text">{{ . }}</p>{{ end }}{{ end }}{{ end }}
       {{ with .button }}{{ partial "components/button.html" (dict "url" .url "label" .label) }}{{ end }}
     </div>
   </div>

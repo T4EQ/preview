@@ -13,6 +13,12 @@
   "intro" .Params.support_text
 ) }}
 
+{{ partial "components/mission-vision.html" (dict
+  "background" "c-band--purple"
+  "class" "c-band--flush-top"
+  "cards" .Params.support_ways
+) }}
+
 {{ partial "components/people-grid.html" (dict
   "background" "c-band--green"
   "title" (.Params.partners_title | default "Our Partners")

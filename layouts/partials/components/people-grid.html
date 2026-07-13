@@ -4,7 +4,7 @@
 <section class="c-band c-band--people {{ .background | default "c-band--purple" }}"{{ with .id }} id="{{ . }}"{{ end }}>
   {{ partial "components/_band-header.html" (dict "title" .title "level" .level) }}
   <div class="container">
-    {{ with .intro }}<p class="c-band__intro c-band__intro--full c-band__intro--lead">{{ . }}</p>{{ end }}
+    {{ with .intro }}<p class="c-band__intro c-band__intro--wide">{{ . }}</p>{{ end }}
     {{ if .groups }}
     {{ with .groupsTitle }}<h2 class="c-people-group__label">{{ . }}</h2>{{ end }}
     {{ range $i, $g := .groups }}
@@ -15,8 +15,9 @@
         <div class="c-person__photo">
           {{ if .image }}<img src="{{ .image }}" alt="{{ .name }}" loading="lazy">{{ end }}
         </div>
-        <p class="c-person__name">{{ .name }}</p>
+        <p class="c-person__name">{{ if .link }}<a class="c-person__name-link" href="{{ .link }}" target="_blank" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</p>
         {{ with .text }}<p class="c-person__text">{{ . }}</p>{{ end }}
+        {{ with .focus }}<p class="c-person__focus">{{ . }}</p>{{ end }}
       </article>
       {{ end }}
     </div>
@@ -28,8 +29,9 @@
         <div class="c-person__photo">
           {{ if .image }}<img src="{{ .image }}" alt="{{ .name }}" loading="lazy">{{ end }}
         </div>
-        <p class="c-person__name">{{ .name }}</p>
+        <p class="c-person__name">{{ if .link }}<a class="c-person__name-link" href="{{ .link }}" target="_blank" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</p>
         {{ with .text }}<p class="c-person__text">{{ . }}</p>{{ end }}
+        {{ with .focus }}<p class="c-person__focus">{{ . }}</p>{{ end }}
       </article>
       {{ end }}
     </div>

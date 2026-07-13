@@ -17,7 +17,7 @@
         {{ if or .button .article }}
         <div class="c-highlight__actions">
           {{ with .button }}{{ partial "components/button.html" (dict "url" .url "label" .label) }}{{ end }}
-          {{ with .article }}<a class="c-highlight__link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label | default "Read the article" }} <span aria-hidden="true">↗</span></a>{{ end }}
+          {{ with .article }}<a class="c-highlight__link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label | default "Read the article" }} <span class="c-arrow" aria-hidden="true">→</span></a>{{ end }}
         </div>
         {{ end }}
       </div>

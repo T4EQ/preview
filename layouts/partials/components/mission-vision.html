@@ -1,11 +1,11 @@
 {{- /* Mission/Vision band: paired cards + optional triangle diagram.
        Params: background, title, level, intro,
                cards (slice of {title,text}), showDiagram (bool) */ -}}
-<section class="c-band {{ .background | default "c-band--purple" }}"{{ with .id }} id="{{ . }}"{{ end }}>
-  {{ partial "components/_band-header.html" (dict "title" .title "level" .level) }}
+<section class="c-band {{ .background | default "c-band--purple" }}{{ with .class }} {{ . }}{{ end }}"{{ with .id }} id="{{ . }}"{{ end }}>
+  {{ partial "components/_band-header.html" (dict "title" .title "level" .level "titleClass" .titleClass) }}
   <div class="container">
     {{ with .intro }}<p class="c-band__intro c-band__intro--wide c-band__intro--lead">{{ . }}</p>{{ end }}
-    <div class="c-mv">
+    <div class="c-mv{{ if not .showDiagram }} c-mv--no-diagram{{ end }}">
       <div class="c-mv__cards">
         {{ range .cards }}
         <div class="c-mv__card">

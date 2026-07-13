@@ -10,6 +10,10 @@ intro: "Our founding team is based in Switzerland – we take care of all things
 Get to know us!
 "
 
-cta_text: "Want to join the team or collaborate with us? We'd love to hear from you."
+cta_text: "Our team drives this mission through a structured commitment of 2–8 hours a week per member. While currently a volunteer effort, future project-specific grants may open up funded positions.
+
+
+If you share our passion for T4EQ and can commit 2–8 hours a week, drop us a message – let’s build something meaningful together.
+"
 cta_image: "/images/schoolkids.jpg"
 ---

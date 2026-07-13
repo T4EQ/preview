@@ -1,16 +1,19 @@
 - title: "Context-Driven Design"
+  icon: "/images/icons/2026-07-11_T4EQ_Icons_Context_Driven_off-white.svg"
   text: "Working with local partners to translate community needs into technical solutions that respect real-world constraints."
   link:
     url: "/partners/"
     label: "Discover our Partners"
 - title: "Engineering to Field"
-  text: "Handling the full journey from feasibility and rapid prototyping to delivering solutions built for local constraints. Crucially, we focus on training and empowering local field teams so they have the knowledge and independence to take full ownership long-term. 
+  icon: "/images/icons/2026-07-11_T4EQ_Icons_Engineering_to_Field_off-white.svg"
+  text: "Delivering locally adapted solutions from initial feasibility to final deployment. Empowering local teams with the knowledge to ensure independent, long-term ownership.
 "
   link:
     url: "/projects/"
     label: "Explore our Projects"
 - title: "Open-Source Solutions"
+  icon: "/images/icons/2026-07-11_T4EQ_Icons_Open_Source_off-white.svg"
   text: "Building transparent, adaptable frameworks that ensure technical knowledge remains a shared, public resource."
   link:
-    url: "/projects/"
-    label: "View open Frameworks"
+    param: "github"
+    label: "View our GitHub Repo"

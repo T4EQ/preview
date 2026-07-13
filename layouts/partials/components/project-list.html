@@ -25,8 +25,8 @@
           </dl>
           {{ if or .link .article }}
           <div class="c-highlight__actions c-project__actions">
-            {{ with .link }}<a class="c-highlight__link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} <span aria-hidden="true">↗</span></a>{{ end }}
-            {{ with .article }}<a class="c-highlight__link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label | default "Read the article" }} <span aria-hidden="true">↗</span></a>{{ end }}
+            {{ with .link }}<a class="c-highlight__link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} <span class="c-arrow" aria-hidden="true">→</span></a>{{ end }}
+            {{ with .article }}<a class="c-highlight__link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label | default "Read the article" }} <span class="c-arrow" aria-hidden="true">→</span></a>{{ end }}
           </div>
           {{ end }}
         </div>

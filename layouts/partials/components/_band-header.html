@@ -1,6 +1,6 @@
-{{- /* Shared band title bar. Params: title, level (h1|h2, default h2) */ -}}
+{{- /* Shared band title bar. Params: title, level (h1|h2, default h2), titleClass */ -}}
 {{- with .title }}
 <div class="c-band__bar"><div class="container">
-  {{ if eq $.level "h1" }}<h1 class="c-band__title">{{ . }}</h1>{{ else }}<h2 class="c-band__title">{{ . }}</h2>{{ end }}
+  {{ if eq $.level "h1" }}<h1 class="c-band__title{{ with $.titleClass }} {{ . }}{{ end }}">{{ . }}</h1>{{ else }}<h2 class="c-band__title{{ with $.titleClass }} {{ . }}{{ end }}">{{ . }}</h2>{{ end }}
 </div></div>
 {{- end }}

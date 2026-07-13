@@ -10,7 +10,7 @@
         {{ if or .icon $.icons }}{{ partial "components/icon.html" (dict "name" .icon) }}{{ end }}
         <h3 class="c-card__title">{{ .title }}</h3>
         <p class="c-card__text">{{ .text }}</p>
-        {{ with .link }}{{ partial "components/button.html" (dict "url" .url "label" .label) }}{{ end }}
+        {{ with .link }}{{ partial "components/button.html" (dict "url" (or .url (index site.Params (.param | default ""))) "label" .label) }}{{ end }}
       </article>
       {{ end }}
     </div>

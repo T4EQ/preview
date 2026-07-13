@@ -7,6 +7,9 @@ theme = "t4eq"
   description = "We envision a world where technology bridges inequality and gives every individual the tools to live with dignity and opportunity."
   tagline = "We envision a world where technology bridges inequality and gives every individual the tools to live with dignity and opportunity."
   ogImage = "/images/og-image.png"
+  linkedin = "https://www.linkedin.com/company/t4eq"
+  github = "https://github.com/t4eq"
+  instagram = "https://www.instagram.com/t4eq_org"
 
 [menu]
   [[menu.main]]

@@ -6,7 +6,21 @@ hero_text: "We collaborate with NGOs, local organisations and companies that sha
 hero_image: "/images/kids2.jpg"
 
 support_text: |
-  As part of our mission, we are actively working on projects aligned with the Sustainable Development Goals (SDGs). Our initial efforts focus on SDG #4: Quality Education, particularly in the context of rural development. We begin by addressing the digital divide in education, ensuring better access to learning opportunities. These initiatives also aim to strengthen local livelihoods and support long-term community growth.
+  We are building an open tech platform to drive sustainable social impact. Whether you want to share your expertise, help us scale existing initiatives, or contribute financially, your support strengthens our initiative. There are several ways to get involved.
+  
+
+
+support_ways_title: "Ways to Support Us"
+support_ways:
+  - title: "Partner to Scale"
+    text: "Collaborate as an NGO, institution, or funder to help expand our current initiatives and navigate local constraints."
+  - title: "Share Your Skills"
+    text: "Join the team as a technical expert to help us execute projects."
+  - title: "Empower Local Teams"
+    text: "Connect with us if you are located near an active local deployment, or work with us to bring a project to a new place."
+  - title: "Fund Our Work"
+    text: "Fuel our platform development, rapid prototyping, and solution deployments where they are needed most."
+
 
 partners_intro: "The organisations we work with on the ground."
 partners:
