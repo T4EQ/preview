@@ -26,8 +26,8 @@
   --fs-h2: 2.75rem;  --fw-h2: 400;    /* 44px · lh 1.0 · ls -2% */
   --fs-h3: 1.75rem;  --fw-h3: 400;    /* 28px · lh 1.1 · ls -2% */
   --fs-h4: 1.375rem; --fw-h4: 400;    /* 22px · lh 1.2 · ls -1% */
-  --fs-t1: 1.5rem;   --fw-t1: 400;    /* 24px · lead (Inter) */
-  --fs-t2: 1.25rem;  --fw-t2: 400;    /* 16px · body (Inter) */
+  --fs-t1: 1.5rem;   --fw-t1: 300;    /* 24px · lead (Inter) */
+  --fs-t2: 1.25rem;  --fw-t2: 300;    /* 16px · body (Inter) */
   --fs-t3: 0.9rem;   --fw-t3: 400;    /* 14px · caption (Inter) */
 
   --ls-tight: -0.02em; /* h1–h3 */
