@@ -3,7 +3,7 @@ title: "About"
 layout: "about"
 hero_title: "Our Approach"
 hero_text: "Our approach is anchored on active collaboration, ensuring we engineer solutions both for and with local partners."
-hero_image: "/images/backgrounds/about_hero.jpg"
+hero_image: "/images/backgrounds/about_hero_v4.jpg"
 
 values_title: "Our Values"
 values_intro: "Our work is grounded in a set of core values that define our approach to technology, partnerships, and community impact:"
