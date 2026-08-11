@@ -927,8 +927,8 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 }
 .c-post-card__title {
   font-family: var(--font-mono);
-  font-size: var(--fs-h4);
-  font-weight: var(--fw-h4);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
   line-height: 1.2;
   letter-spacing: var(--ls-snug);
   margin-bottom: var(--space-md);
