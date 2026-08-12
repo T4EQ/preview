@@ -1048,6 +1048,12 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
   letter-spacing: var(--ls-snug);
   margin-bottom: var(--space-md);
 }
+.c-comments .isso-textarea,
+.c-comments .isso-preview,
+.c-comments .isso-input-wrapper input,
+.c-comments .isso-post-action > input {
+  color: var(--black);
+}
 .c-post__back {
   max-width: 720px;
   margin-top: var(--space-lg);
