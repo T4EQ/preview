@@ -1033,9 +1033,20 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 .c-comments #isso-thread {
   --isso-primary-text-color: var(--offwhite);
   --isso-secondary-text-color: rgba(245, 245, 244, 0.75);
+  --isso-border: 1px solid var(--line-soft);
+  --isso-box-shadow-color: transparent;
   --isso-hover-color: var(--offwhite);
   --isso-link-hover-color: var(--offwhite);
   --isso-link-text-shadow-color: transparent;
+  --isso-input-background-color: transparent;
+  --isso-input-outline-color: var(--offwhite);
+  --isso-button-background-color: var(--offwhite);
+  --isso-button-border: none;
+  --isso-button-hover-background-color: var(--offwhite);
+  --isso-button-active-background-color: var(--offwhite);
+  --isso-preview-background: transparent;
+  --isso-preview-border-color: var(--line-soft);
+  --isso-preview-box-shadow-color: transparent;
   --isso-comment-divider-color: var(--line-extrasoft);
   --isso-page-author-suffix-color: var(--offwhite);
   color: var(--offwhite);
@@ -1044,15 +1055,98 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 }
 .c-comments .isso-thread-heading {
   font-family: var(--font-mono);
-  font-size: var(--fs-h4);
-  letter-spacing: var(--ls-snug);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  line-height: 1.2;
+  letter-spacing: var(--ls-tight);
   margin-bottom: var(--space-md);
+}
+.c-comments .isso-postbox {
+  max-width: 580px;
+  margin: 0 0 var(--space-lg);
 }
 .c-comments .isso-textarea,
 .c-comments .isso-preview,
-.c-comments .isso-input-wrapper input,
+.c-comments .isso-input-wrapper input {
+  width: 100%;
+  max-width: none;
+  background: transparent;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  box-shadow: none;
+  padding: 0.9rem 1.1rem;
+  font-family: var(--font-sans);
+  font-size: var(--fs-t2);
+  font-weight: var(--fw-t2);
+  line-height: 1.5;
+  color: var(--offwhite);
+  transition: border-color 0.2s;
+}
+.c-comments .isso-textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+.c-comments .isso-preview {
+  min-height: 200px;
+}
+.c-comments .isso-textarea:focus,
+.c-comments .isso-input-wrapper input:focus,
+.c-comments .isso-auth-section input:focus {
+  outline: none;
+  border-color: var(--offwhite);
+}
+.c-comments .isso-input-wrapper {
+  display: block;
+  width: 100%;
+  margin: 0 0 var(--space-md);
+}
+.c-comments .isso-input-wrapper label {
+  height: auto;
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-h4);
+  line-height: 1.2;
+  letter-spacing: var(--ls-snug);
+  color: var(--offwhite);
+}
+.c-comments .isso-textarea::placeholder,
+.c-comments .isso-input-wrapper input::placeholder {
+  color: rgba(245, 245, 244, 0.65);
+  opacity: 1;
+}
+.c-comments .isso-post-action {
+  display: inline-block;
+  float: none;
+  margin: 0 var(--space-xs) 0 0;
+}
 .c-comments .isso-post-action > input {
-  color: var(--black);
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 7px 18px;
+  border: none;
+  border-radius: 999px;
+  background: var(--offwhite);
+  box-shadow: none;
+  color: var(--purple);
+  font-family: var(--font-sans);
+  font-size: var(--fs-t3);
+  font-weight: var(--fw-t3);
+  line-height: 1.65;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.c-comments .isso-post-action > input:hover { opacity: 0.85; }
+.c-comments .isso-post-action > input:disabled { cursor: wait; opacity: 0.6; }
+.c-comments .isso-comment:not(:first-of-type),
+.c-comments .isso-follow-up .isso-comment {
+  border-color: var(--line-extrasoft);
+}
+.c-comments .isso-avatar svg {
+  border-color: var(--line-soft);
+  border-radius: 50%;
+  box-shadow: none;
 }
 .c-post__back {
   max-width: 720px;
