@@ -1084,6 +1084,7 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 }
 .c-comments .isso-textarea {
   min-height: 200px;
+  margin-bottom: var(--space-md);
   resize: vertical;
 }
 .c-comments .isso-preview {
@@ -1117,14 +1118,35 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
 }
 .c-comments .isso-post-action {
   display: inline-block;
+  position: relative;
   float: none;
   margin: 0 var(--space-xs) 0 0;
+  transition: opacity 0.2s;
+}
+.c-comments .isso-post-action:has(input[name="edit"]),
+.c-comments .isso-postbox.isso-preview-mode > .isso-form-wrapper .isso-post-action:has(input[name="preview"]) {
+  display: none;
+}
+.c-comments .isso-postbox.isso-preview-mode > .isso-form-wrapper .isso-post-action:has(input[name="edit"]) {
+  display: inline-block;
+}
+.c-comments .isso-post-action::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%) rotate(-45deg);
+  color: var(--purple);
+  font-family: var(--font-sans);
+  font-size: 0.95em;
+  line-height: 1;
+  pointer-events: none;
 }
 .c-comments .isso-post-action > input {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  padding: 7px 18px;
+  padding: 7px 39px 7px 18px;
   border: none;
   border-radius: 999px;
   background: var(--offwhite);
@@ -1137,8 +1159,9 @@ main > .c-pageheader:first-child { padding-top: calc(var(--nav-height) + var(--s
   cursor: pointer;
   transition: opacity 0.2s;
 }
-.c-comments .isso-post-action > input:hover { opacity: 0.85; }
-.c-comments .isso-post-action > input:disabled { cursor: wait; opacity: 0.6; }
+.c-comments .isso-post-action:hover { opacity: 0.85; }
+.c-comments .isso-post-action:has(> input:disabled) { opacity: 0.6; }
+.c-comments .isso-post-action > input:disabled { cursor: wait; }
 .c-comments .isso-comment:not(:first-of-type),
 .c-comments .isso-follow-up .isso-comment {
   border-color: var(--line-extrasoft);
