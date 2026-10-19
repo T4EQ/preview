@@ -1255,3 +1255,43 @@ html:has(.c-lightbox[open]) { overflow: hidden; }
   .c-pager         { grid-template-columns: 1fr; justify-items: start; gap: var(--space-sm); }
   .c-pager__status { justify-self: start; }
 }
+/* ==========================================
+   Partner Logos Only (Does NOT affect Team)
+   ========================================== */
+
+/* 1. Target partner cards specifically (where logos link externally or are inside partner bands) */
+.c-band--people .c-person:has(.c-person__photo a) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Equalize logo box height and sit logo bottoms on the exact same baseline */
+.c-band--people .c-person:has(.c-person__photo a) .c-person__photo {
+  height: clamp(50px, 8vw, 90px); 
+  display: flex;
+  align-items: flex-end;     /* Rest logos on the exact same bottom baseline */
+  justify-content: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+/* 3. Scale partner images fluidly without stretching */
+.c-band--people .c-person:has(.c-person__photo a) .c-person__photo img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 4. Force text below partner logos to start on the exact same horizontal top line */
+.c-band--people .c-person:has(.c-person__photo a) .c-person__text {
+  margin-top: 0;
+}
+
+.c-band--people .c-person:has(.c-person__photo a) .c-person__text a {
+  text-decoration: none;
+}
+
+.c-band--people .c-person:has(.c-person__photo a) .c-person__text a:hover {
+  text-decoration: underline;
+}
